@@ -18,6 +18,8 @@
 
 Apolo Mind is a policy-based payment safety layer for autonomous AI agents on 0G. It lets users give agents limited payment authority without giving them unlimited wallet control.
 
+Notion project page: https://app.notion.com/p/3a08ee65843481d99bf7ed41c5fe3d63
+
 AI agents are moving from conversation to action. They will buy API credits, pay for research, rent compute, access data, renew tools, and make small operational payments while people are busy. That is useful, but it creates a hard question: if an agent can spend for me, how do I know it will spend safely?
 
 Apolo Mind is built for that question. It turns agent payments from a blind permission into a controlled relationship: **rules first, payment second, proof always.**
@@ -33,6 +35,14 @@ Apolo Mind is built for that question. It turns agent payments from a blind perm
 | Pay Research | Receipts |
 | :---: | :---: |
 | <img src="frontend/public/readme/pay-research.png" alt="Apolo Mind Pay Research" width="360" /> | <img src="frontend/public/readme/receipts.png" alt="Apolo Mind receipts" width="360" /> |
+
+| Create Policy | Agents | Agentic ID |
+| :---: | :---: | :---: |
+| <img src="frontend/public/readme/create-policy.png" alt="Apolo Mind create policy page" width="280" /> | <img src="frontend/public/readme/agents.png" alt="Apolo Mind agents page" width="280" /> | <img src="frontend/public/readme/agentic-id.png" alt="Apolo Mind Agentic ID page" width="280" /> |
+
+| Demo Flow |
+| :---: |
+| <img src="frontend/public/readme/demo.png" alt="Apolo Mind demo flow page" width="760" /> |
 
 </div>
 
