@@ -17,15 +17,54 @@ html {
 body {
   margin: 0;
   min-height: 100vh;
-  background: #030303;
+  background: #050505;
   color: #f8fafc;
   font-family: Arial, Helvetica, sans-serif;
+}
+
+body::before,
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+}
+
+body::before {
+  z-index: 0;
+  background:
+    radial-gradient(circle at 15% 16%, rgba(229, 9, 20, 0.28), transparent 30%),
+    radial-gradient(circle at 84% 14%, rgba(255, 255, 255, 0.10), transparent 24%),
+    radial-gradient(circle at 50% 88%, rgba(239, 68, 68, 0.22), transparent 34%),
+    linear-gradient(135deg, #020202 0%, #111111 48%, #070707 100%);
+  animation: living-color 14s ease-in-out infinite alternate;
+}
+
+body::after {
+  z-index: 0;
+  opacity: 0.24;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.12) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.12) 1px, transparent 1px);
+  background-size: 54px 54px;
+  mask-image: linear-gradient(to bottom, transparent, black 14%, black 82%, transparent);
+  animation: grid-drift 24s linear infinite;
 }
 
 button,
 input,
 select {
   font: inherit;
+}
+
+@keyframes living-color {
+  0% { filter: saturate(1.05); transform: scale(1); }
+  100% { filter: saturate(1.4); transform: scale(1.035); }
+}
+
+@keyframes grid-drift {
+  from { background-position: 0 0, 0 0; }
+  to { background-position: 108px 54px, 108px 54px; }
 }
 
 @layer components {
@@ -38,11 +77,11 @@ select {
   }
 
   .band {
-    @apply sticky top-0 z-40 border-b border-white/15 bg-black/75 backdrop-blur-xl;
+    @apply sticky top-0 z-40 border-b border-white/10 bg-black/75 backdrop-blur-xl;
   }
 
   .nav {
-    @apply mx-auto flex max-w-7xl flex-col gap-4 px-5 py-4 sm:px-8 lg:flex-row lg:items-center lg:justify-between lg:px-10;
+    @apply mx-auto flex max-w-7xl flex-col gap-4 px-5 py-3 sm:px-8 lg:flex-row lg:items-center lg:justify-between lg:px-10;
   }
 
   .brand {
@@ -50,7 +89,7 @@ select {
   }
 
   .brand-mark {
-    @apply grid h-9 w-9 place-items-center rounded-lg bg-white text-sm font-black text-black shadow-glow;
+    @apply grid h-10 w-10 place-items-center overflow-hidden rounded-md border border-white/10 bg-white shadow-glow;
   }
 
   .nav-links {
@@ -58,7 +97,7 @@ select {
   }
 
   .nav-links a {
-    @apply inline-flex items-center gap-2 rounded-md px-3 py-2 text-sm font-semibold text-zinc-300 transition hover:bg-white hover:text-black;
+    @apply inline-flex items-center gap-2 rounded-md px-3 py-2 text-sm font-semibold text-slate-200 transition hover:bg-white hover:text-black;
   }
 
   .section {
@@ -78,7 +117,7 @@ select {
   }
 
   .card {
-    @apply rounded-lg border border-white/15 bg-white/[0.055] p-5 shadow-2xl shadow-black/40 backdrop-blur-xl;
+    @apply rounded-lg border border-white/10 bg-black/55 p-5 shadow-2xl shadow-black/40 backdrop-blur-xl;
   }
 
   .compact {
@@ -94,23 +133,23 @@ select {
   }
 
   .button {
-    @apply inline-flex min-h-11 items-center justify-center gap-2 rounded-md bg-white px-5 font-bold text-black transition hover:bg-zinc-200;
+    @apply inline-flex min-h-11 items-center justify-center gap-2 rounded-md bg-aqua px-5 font-bold text-white transition hover:bg-white hover:text-black;
   }
 
   .button.secondary {
-    @apply border border-white/20 bg-black/30 text-white hover:bg-white hover:text-black;
+    @apply border border-white/20 bg-white/10 text-white hover:bg-white hover:text-black;
   }
 
   .eyebrow {
-    @apply text-xs font-black uppercase tracking-[0.22em] text-white;
+    @apply text-xs font-black uppercase tracking-[0.22em] text-aqua;
   }
 
   .lede {
-    @apply max-w-2xl text-lg leading-8 text-zinc-300;
+    @apply max-w-2xl text-lg leading-8 text-slate-200;
   }
 
   .muted {
-    @apply text-zinc-400;
+    @apply text-slate-300;
   }
 
   .metric {
@@ -118,7 +157,7 @@ select {
   }
 
   .metric span {
-    @apply text-sm text-zinc-400;
+    @apply text-sm text-slate-300;
   }
 
   .metric strong {
@@ -134,12 +173,12 @@ select {
   }
 
   .field label {
-    @apply text-sm font-bold text-zinc-300;
+    @apply text-sm font-bold text-slate-200;
   }
 
   .field input,
   .field select {
-    @apply min-h-11 rounded-md border border-white/15 bg-black/65 px-3 text-white outline-none transition focus:border-white;
+    @apply min-h-11 rounded-md border border-white/15 bg-black/55 px-3 text-white outline-none transition focus:border-aqua;
   }
 
   .list {
@@ -147,113 +186,22 @@ select {
   }
 
   .pill {
-    @apply inline-flex w-fit items-center gap-2 rounded-full border border-white/15 bg-white/10 px-3 py-1 text-xs font-bold text-zinc-200;
+    @apply inline-flex w-fit items-center gap-2 rounded-full border border-white/15 bg-white/10 px-3 py-1 text-xs font-bold text-slate-100;
   }
 
   .pill.ok {
-    @apply border border-white/20 bg-white/15 text-white;
+    @apply border border-aqua/30 bg-aqua/15 text-aqua;
   }
 
   .pill.warn {
-    @apply border border-zinc-400/30 bg-zinc-400/15 text-zinc-200;
+    @apply border border-plasma/30 bg-plasma/15 text-pink-100;
   }
 
   .pill.bad {
-    @apply border border-white/30 bg-black/50 text-white;
+    @apply border border-red-300/30 bg-red-400/20 text-red-100;
   }
 
   .code {
     @apply break-all font-mono text-sm;
   }
 }
-
-
-body::before,
-body::after {
-  content: "";
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-}
-
-body::before {
-  z-index: 0;
-  background:
-    radial-gradient(circle at 14% 14%, rgba(255, 255, 255, 0.18), transparent 24%),
-    radial-gradient(circle at 84% 18%, rgba(255, 255, 255, 0.10), transparent 28%),
-    radial-gradient(circle at 50% 92%, rgba(255, 255, 255, 0.12), transparent 34%),
-    #030303;
-  animation: living-light 16s ease-in-out infinite alternate;
-}
-
-body::after {
-  z-index: 0;
-  opacity: 0.22;
-  background-image:
-    linear-gradient(rgba(255, 255, 255, 0.10) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.10) 1px, transparent 1px);
-  background-size: 54px 54px;
-  mask-image: linear-gradient(to bottom, transparent, black 16%, black 78%, transparent);
-  animation: grid-drift 28s linear infinite;
-}
-
-@keyframes living-light {
-  0% { filter: contrast(1) brightness(0.9); transform: scale(1); }
-  100% { filter: contrast(1.25) brightness(1.1); transform: scale(1.04); }
-}
-
-@keyframes grid-drift {
-  from { background-position: 0 0, 0 0; }
-  to { background-position: 108px 54px, 108px 54px; }
-}
-
-@layer utilities {
-  .text-aqua,
-  .text-violet-300,
-  .text-blue-300,
-  .text-blue-100,
-  .text-emerald-300,
-  .text-emerald-200,
-  .text-red-300,
-  .text-red-200,
-  .text-amber-200 {
-    color: #ffffff !important;
-  }
-
-  .bg-aqua\/10,
-  .bg-violet\/10,
-  .bg-blue-400\/10,
-  .bg-emerald-400\/10,
-  .bg-red-400\/10,
-  .bg-emerald-400\/15,
-  .bg-red-400\/15,
-  .bg-amber-400\/15 {
-    background-color: rgba(255, 255, 255, 0.08) !important;
-  }
-
-  .border-aqua\/20,
-  .border-aqua\/25,
-  .border-aqua\/30,
-  .border-violet\/20,
-  .border-violet\/25,
-  .border-blue-400\/20,
-  .border-blue-400\/25,
-  .border-emerald-400\/25,
-  .border-red-400\/25,
-  .border-red-400\/30 {
-    border-color: rgba(255, 255, 255, 0.22) !important;
-  }
-
-  .from-aqua,
-  .from-aqua\/15 {
-    --tw-gradient-from: rgba(255, 255, 255, 0.22) var(--tw-gradient-from-position) !important;
-    --tw-gradient-to: rgba(255, 255, 255, 0) var(--tw-gradient-to-position) !important;
-    --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to) !important;
-  }
-
-  .to-violet,
-  .to-violet\/15 {
-    --tw-gradient-to: rgba(255, 255, 255, 0.08) var(--tw-gradient-to-position) !important;
-  }
-}
-

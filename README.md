@@ -1,8 +1,8 @@
-﻿# AgentPolicy Pay
+﻿# Apolo Mind
 
 **Programmable spending control for autonomous AI agents on 0G.**
 
-AgentPolicy Pay is a hackathon demo showing how users can give AI agents limited payment authority without giving them unlimited wallet control.
+Apolo Mind is a hackathon demo showing how users can give AI agents limited payment authority without giving them unlimited wallet control.
 
 ## Problem
 
@@ -10,7 +10,7 @@ Autonomous agents increasingly need to pay for APIs, data, storage, compute, and
 
 ## Solution
 
-AgentPolicy Pay adds a policy safety layer. Users create spending rules, approve agent wallets, allow service receivers, simulate payment requests, block risky payments, and generate verifiable receipts.
+Apolo Mind adds a policy safety layer. Users create spending rules, approve agent wallets, allow service receivers, review research payments, preserve private agent-payment memory, and generate verifiable receipts.
 
 ## Why 0G
 
@@ -29,7 +29,8 @@ AgentPolicy Pay adds a policy safety layer. Users create spending rules, approve
 - Spending policy creation with max transaction, daily limit, approval threshold, and receipt requirement.
 - AI agent approval and revocation.
 - Service receiver allowlist and blocklist.
-- Payment simulator with safe, overspend, unknown receiver, and vague-reason scenarios.
+- Mind Vault with private capture, anonymized model view, local memory index, pattern mirror, ask-memory, proof hashes, and JSON export.
+- Pay Research review powered by the configured Nous endpoint.
 - AI-style risk analyzer with score, warnings, and recommended action.
 - Receipt generation with full payload hash, mock tx hash, demo storage URI, and optional smart-contract `recordPayment` call.
 - Agentic ID profile UI for future ERC-7857 support.
@@ -40,9 +41,9 @@ AgentPolicy Pay adds a policy safety layer. Users create spending rules, approve
 1. Load demo data from `/dashboard`.
 2. Review the demo policy: maxPerTx 5, dailyLimit 25, approvalThreshold 3, receipt required.
 3. Review ResearchBot and MarketDataAPI.
-4. Run a safe payment in `/payment-simulator`.
-5. Run an overspend or unknown receiver attempt to see blocking.
-6. Generate a receipt for an approved payment.
+4. Save agent-payment context in `/mind-vault`.
+5. Run a research payment review in `/pay-research`.
+6. Generate or inspect proof-ready receipt context.
 7. Inspect the receipt proof in `/receipts`.
 
 ## Architecture
@@ -64,10 +65,11 @@ User -> Next.js UI -> Policy Engine / Risk Analyzer
 
 - `/`: landing page
 - `/dashboard`: metrics and demo seed loading
+- `/mind-vault`: private payment memory, anonymized model view, index, mirror, proof ledger, and export
 - `/create-policy`: policy creation
 - `/agents`: agent and service controls
 - `/agentic-id`: Agentic ID profile UI
-- `/payment-simulator`: risk checks and receipt generation
+- `/pay-research`: Nous-powered research payment review
 - `/receipts`: receipt proofs, filters, details, and JSON export
 - `/demo`: judge-friendly walkthrough
 
@@ -107,7 +109,7 @@ NEXT_PUBLIC_ENABLE_REAL_0G_STORAGE=false
 Screenshots placeholder:
 
 - Dashboard with demo seed data
-- Payment simulator approved flow
+- Mind Vault private memory flow
 - Receipts proof modal
 - Agentic ID profile page
 

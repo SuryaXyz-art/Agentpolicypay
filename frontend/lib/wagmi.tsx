@@ -2,8 +2,17 @@
 
 import "@rainbow-me/rainbowkit/styles.css";
 
-import { RainbowKitProvider, getDefaultConfig } from "@rainbow-me/rainbowkit";
-import { WagmiProvider } from "wagmi";
+import { RainbowKitProvider, connectorsForWallets } from "@rainbow-me/rainbowkit";
+import {
+  coin98Wallet,
+  coinbaseWallet,
+  injectedWallet,
+  metaMaskWallet,
+  okxWallet,
+  rabbyWallet,
+  walletConnectWallet
+} from "@rainbow-me/rainbowkit/wallets";
+import { WagmiProvider, createConfig, http } from "wagmi";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { defineChain } from "viem";
 import { ReactNode, useState } from "react";
@@ -21,10 +30,31 @@ const zeroGTestnet = defineChain({
   testnet: true
 });
 
-const config = getDefaultConfig({
-  appName: "AgentPolicy Pay",
-  projectId: process.env.NEXT_PUBLIC_WALLETCONNECT_PROJECT_ID ?? "demo",
+const walletConnectProjectId = process.env.NEXT_PUBLIC_WALLETCONNECT_PROJECT_ID?.trim() || "demo";
+
+const connectors = connectorsForWallets(
+  [
+    {
+      groupName: "Recommended",
+      wallets: [metaMaskWallet, okxWallet, rabbyWallet, injectedWallet]
+    },
+    {
+      groupName: "More wallets",
+      wallets: [walletConnectWallet, coinbaseWallet, coin98Wallet]
+    }
+  ],
+  {
+    appName: "Apolo Mind",
+    projectId: walletConnectProjectId
+  }
+);
+
+const config = createConfig({
   chains: [zeroGTestnet],
+  connectors,
+  transports: {
+    [zeroGTestnet.id]: http(zeroGTestnet.rpcUrls.default.http[0])
+  },
   ssr: true
 });
 

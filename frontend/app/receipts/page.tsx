@@ -49,7 +49,7 @@ export default function ReceiptsPage() {
 
         <div className="list">
           {filteredReceipts.map((receipt) => <ReceiptCard key={receipt.receiptId} receipt={receipt} onView={() => setSelectedReceipt(receipt)} onExport={() => exportReceipt(receipt)} />)}
-          {filteredReceipts.length === 0 && <div className="rounded-lg border border-dashed border-white/15 bg-white/[0.03] p-8"><div className="row"><ReceiptText className="text-aqua" /><h2 className="text-xl font-black text-white">No receipts found</h2></div><p className="mt-3 text-slate-400">Run the payment simulator and generate a receipt to populate this view.</p></div>}
+          {filteredReceipts.length === 0 && <div className="rounded-lg border border-dashed border-white/15 bg-white/[0.03] p-8"><div className="row"><ReceiptText className="text-aqua" /><h2 className="text-xl font-black text-white">No receipts found</h2></div><p className="mt-3 text-slate-400">Use Pay Research or Mind Vault to create proof-ready payment context.</p></div>}
         </div>
       </section>
 

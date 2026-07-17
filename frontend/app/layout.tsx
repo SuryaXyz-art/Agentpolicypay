@@ -4,8 +4,8 @@ import Navbar from "@/components/Navbar";
 import { Providers } from "@/lib/wagmi";
 
 export const metadata: Metadata = {
-  title: "AgentPolicy Pay",
-  description: "Spending policy guardrails for AI agent payments on 0G."
+  title: "Apolo Mind",
+  description: "Policy-based payment safety for autonomous AI agents."
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {

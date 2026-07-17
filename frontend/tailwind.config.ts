@@ -5,14 +5,14 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        night: "#030303",
-        ink: "#0a0a0a",
-        aqua: "#ffffff",
-        violet: "#bdbdbd",
-        plasma: "#f5f5f5"
+        night: "#070707",
+        ink: "#111111",
+        aqua: "#e50914",
+        violet: "#ffffff",
+        plasma: "#ef4444"
       },
       boxShadow: {
-        glow: "0 0 70px rgba(255, 255, 255, 0.18)"
+        glow: "0 0 70px rgba(229, 9, 20, 0.22)"
       }
     }
   },
