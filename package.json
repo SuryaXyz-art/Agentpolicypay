@@ -1,0 +1,39 @@
+{
+    "name":  "agentpolicy-pay",
+    "version":  "0.1.0",
+    "private":  true,
+    "scripts":  {
+                    "dev":  "next dev frontend",
+                    "build":  "next build frontend",
+                    "lint":  "next lint frontend",
+                    "typecheck":  "tsc --noEmit",
+                    "compile":  "hardhat compile",
+                    "deploy:0g":  "hardhat run scripts/deploy.ts --network og",
+                    "test":  "hardhat test"
+                },
+    "dependencies":  {
+                         "@nomicfoundation/hardhat-toolbox":  "^5.0.0",
+                         "@rainbow-me/rainbowkit":  "^2.2.8",
+                         "@tanstack/react-query":  "^5.62.11",
+                         "ethers":  "^6.13.5",
+                         "hardhat":  "^2.22.18",
+                         "lucide-react":  "^0.468.0",
+                         "next":  "^15.1.3",
+                         "react":  "^19.0.0",
+                         "react-dom":  "^19.0.0",
+                         "viem":  "^2.21.58",
+                         "wagmi":  "^2.14.7"
+                     },
+    "devDependencies":  {
+                            "@types/node":  "^22.10.5",
+                            "@types/react":  "^19.0.2",
+                            "@types/react-dom":  "^19.0.2",
+                            "autoprefixer":  "^10.5.0",
+                            "dotenv":  "^16.6.1",
+                            "eslint":  "^9.17.0",
+                            "eslint-config-next":  "^15.1.3",
+                            "postcss":  "^8.5.15",
+                            "tailwindcss":  "^3.4.19",
+                            "typescript":  "^5.7.2"
+                        }
+}

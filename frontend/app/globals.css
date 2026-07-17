@@ -1,0 +1,259 @@
+﻿@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: #030303;
+  color: #f8fafc;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+button,
+input,
+select {
+  font: inherit;
+}
+
+@layer components {
+  .app-shell {
+    @apply relative z-[1] min-h-screen overflow-hidden bg-transparent text-white;
+  }
+
+  .page {
+    @apply relative mx-auto max-w-7xl px-5 py-8 sm:px-8 lg:px-10;
+  }
+
+  .band {
+    @apply sticky top-0 z-40 border-b border-white/15 bg-black/75 backdrop-blur-xl;
+  }
+
+  .nav {
+    @apply mx-auto flex max-w-7xl flex-col gap-4 px-5 py-4 sm:px-8 lg:flex-row lg:items-center lg:justify-between lg:px-10;
+  }
+
+  .brand {
+    @apply flex items-center gap-3 text-base font-black tracking-wide text-white;
+  }
+
+  .brand-mark {
+    @apply grid h-9 w-9 place-items-center rounded-lg bg-white text-sm font-black text-black shadow-glow;
+  }
+
+  .nav-links {
+    @apply flex flex-wrap gap-2;
+  }
+
+  .nav-links a {
+    @apply inline-flex items-center gap-2 rounded-md px-3 py-2 text-sm font-semibold text-zinc-300 transition hover:bg-white hover:text-black;
+  }
+
+  .section {
+    @apply mt-8 grid gap-6;
+  }
+
+  .stack {
+    @apply grid gap-4;
+  }
+
+  .grid.cols-2 {
+    @apply gap-5 lg:grid-cols-2;
+  }
+
+  .grid.cols-3 {
+    @apply gap-5 md:grid-cols-3;
+  }
+
+  .card {
+    @apply rounded-lg border border-white/15 bg-white/[0.055] p-5 shadow-2xl shadow-black/40 backdrop-blur-xl;
+  }
+
+  .compact {
+    @apply shadow-none;
+  }
+
+  .row {
+    @apply flex flex-wrap items-center gap-3;
+  }
+
+  .actions {
+    @apply flex flex-wrap items-center gap-3;
+  }
+
+  .button {
+    @apply inline-flex min-h-11 items-center justify-center gap-2 rounded-md bg-white px-5 font-bold text-black transition hover:bg-zinc-200;
+  }
+
+  .button.secondary {
+    @apply border border-white/20 bg-black/30 text-white hover:bg-white hover:text-black;
+  }
+
+  .eyebrow {
+    @apply text-xs font-black uppercase tracking-[0.22em] text-white;
+  }
+
+  .lede {
+    @apply max-w-2xl text-lg leading-8 text-zinc-300;
+  }
+
+  .muted {
+    @apply text-zinc-400;
+  }
+
+  .metric {
+    @apply grid gap-2;
+  }
+
+  .metric span {
+    @apply text-sm text-zinc-400;
+  }
+
+  .metric strong {
+    @apply text-3xl font-black text-white;
+  }
+
+  .form {
+    @apply grid gap-4;
+  }
+
+  .field {
+    @apply grid gap-2;
+  }
+
+  .field label {
+    @apply text-sm font-bold text-zinc-300;
+  }
+
+  .field input,
+  .field select {
+    @apply min-h-11 rounded-md border border-white/15 bg-black/65 px-3 text-white outline-none transition focus:border-white;
+  }
+
+  .list {
+    @apply grid gap-4;
+  }
+
+  .pill {
+    @apply inline-flex w-fit items-center gap-2 rounded-full border border-white/15 bg-white/10 px-3 py-1 text-xs font-bold text-zinc-200;
+  }
+
+  .pill.ok {
+    @apply border border-white/20 bg-white/15 text-white;
+  }
+
+  .pill.warn {
+    @apply border border-zinc-400/30 bg-zinc-400/15 text-zinc-200;
+  }
+
+  .pill.bad {
+    @apply border border-white/30 bg-black/50 text-white;
+  }
+
+  .code {
+    @apply break-all font-mono text-sm;
+  }
+}
+
+
+body::before,
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+}
+
+body::before {
+  z-index: 0;
+  background:
+    radial-gradient(circle at 14% 14%, rgba(255, 255, 255, 0.18), transparent 24%),
+    radial-gradient(circle at 84% 18%, rgba(255, 255, 255, 0.10), transparent 28%),
+    radial-gradient(circle at 50% 92%, rgba(255, 255, 255, 0.12), transparent 34%),
+    #030303;
+  animation: living-light 16s ease-in-out infinite alternate;
+}
+
+body::after {
+  z-index: 0;
+  opacity: 0.22;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.10) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.10) 1px, transparent 1px);
+  background-size: 54px 54px;
+  mask-image: linear-gradient(to bottom, transparent, black 16%, black 78%, transparent);
+  animation: grid-drift 28s linear infinite;
+}
+
+@keyframes living-light {
+  0% { filter: contrast(1) brightness(0.9); transform: scale(1); }
+  100% { filter: contrast(1.25) brightness(1.1); transform: scale(1.04); }
+}
+
+@keyframes grid-drift {
+  from { background-position: 0 0, 0 0; }
+  to { background-position: 108px 54px, 108px 54px; }
+}
+
+@layer utilities {
+  .text-aqua,
+  .text-violet-300,
+  .text-blue-300,
+  .text-blue-100,
+  .text-emerald-300,
+  .text-emerald-200,
+  .text-red-300,
+  .text-red-200,
+  .text-amber-200 {
+    color: #ffffff !important;
+  }
+
+  .bg-aqua\/10,
+  .bg-violet\/10,
+  .bg-blue-400\/10,
+  .bg-emerald-400\/10,
+  .bg-red-400\/10,
+  .bg-emerald-400\/15,
+  .bg-red-400\/15,
+  .bg-amber-400\/15 {
+    background-color: rgba(255, 255, 255, 0.08) !important;
+  }
+
+  .border-aqua\/20,
+  .border-aqua\/25,
+  .border-aqua\/30,
+  .border-violet\/20,
+  .border-violet\/25,
+  .border-blue-400\/20,
+  .border-blue-400\/25,
+  .border-emerald-400\/25,
+  .border-red-400\/25,
+  .border-red-400\/30 {
+    border-color: rgba(255, 255, 255, 0.22) !important;
+  }
+
+  .from-aqua,
+  .from-aqua\/15 {
+    --tw-gradient-from: rgba(255, 255, 255, 0.22) var(--tw-gradient-from-position) !important;
+    --tw-gradient-to: rgba(255, 255, 255, 0) var(--tw-gradient-to-position) !important;
+    --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to) !important;
+  }
+
+  .to-violet,
+  .to-violet\/15 {
+    --tw-gradient-to: rgba(255, 255, 255, 0.08) var(--tw-gradient-to-position) !important;
+  }
+}
+

@@ -1,0 +1,12 @@
+node_modules/
+.next/
+out/
+artifacts/
+cache/
+typechain-types/
+coverage/
+.env*.local
+
+next-dev*.log
+tsconfig.tsbuildinfo
+.env
