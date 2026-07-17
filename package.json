@@ -1,11 +1,11 @@
 {
-    "name": "apolo-mind",
+    "name":  "apolo-mind",
     "version":  "0.1.0",
     "private":  true,
     "scripts":  {
                     "dev":  "next dev frontend",
                     "build":  "next build frontend",
-                    "lint":  "next lint frontend",
+                    "lint":  "eslint frontend --max-warnings=0",
                     "typecheck":  "tsc --noEmit",
                     "compile":  "hardhat compile",
                     "deploy:0g":  "hardhat run scripts/deploy.ts --network og",
