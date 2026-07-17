@@ -1,4 +1,4 @@
-# AgentPolicy Pay
+﻿# AgentPolicy Pay
 
 **Programmable spending control for autonomous AI agents on 0G.**
 
@@ -122,3 +122,13 @@ Screenshots placeholder:
 ## Team / Builder Note
 
 Built as a focused hackathon prototype. Real contract interactions are prepared and guarded by environment config; demo-mode features are clearly labeled to avoid overclaiming.
+
+## Latest 0G Galileo Deployment
+
+Deployed on 0G Galileo Testnet, chain ID `16602`:
+
+- AgentPolicyRegistry: `0x1128E66806605bCEf7836147C60a222CDa47cA53`
+- AgentPaymentGuard: `0x0cf76Ce76684AB75978dE7e27046Faf63dC7898A`
+- Explorer: `https://chainscan-galileo.0g.ai`
+
+Deployment metadata is also stored in `deployments/0g-galileo.json`.

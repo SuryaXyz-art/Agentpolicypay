@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import "@rainbow-me/rainbowkit/styles.css";
 
@@ -9,7 +9,7 @@ import { defineChain } from "viem";
 import { ReactNode, useState } from "react";
 
 const zeroGTestnet = defineChain({
-  id: 16600,
+  id: 16602,
   name: "0G Galileo Testnet",
   nativeCurrency: { name: "0G", symbol: "0G", decimals: 18 },
   rpcUrls: {
@@ -39,3 +39,4 @@ export function Providers({ children }: { children: ReactNode }) {
     </WagmiProvider>
   );
 }
+

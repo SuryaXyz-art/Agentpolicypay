@@ -1,0 +1,9 @@
+﻿{
+    "network":  "0G Galileo Testnet",
+    "chainId":  16602,
+    "rpcUrl":  "https://evmrpc-testnet.0g.ai",
+    "deployedAt":  "2026-07-17T15:30:12.6500629Z",
+    "AgentPolicyRegistry":  "0x1128E66806605bCEf7836147C60a222CDa47cA53",
+    "AgentPaymentGuard":  "0x0cf76Ce76684AB75978dE7e27046Faf63dC7898A",
+    "explorer":  "https://chainscan-galileo.0g.ai"
+}
