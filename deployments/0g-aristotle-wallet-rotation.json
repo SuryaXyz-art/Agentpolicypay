@@ -1,0 +1,17 @@
+{
+  "schema": "apolo-mind/wave3/wallet-rotation/v1",
+  "chainId": 16661,
+  "status": "CONFIRMED",
+  "startedAt": "2026-09-01T18:51:56.813Z",
+  "completedAt": "2026-09-01T18:52:19.334Z",
+  "oldAddress": "0x237cd22f054b34fcaFB3b270937925c046B92840",
+  "deployerAddress": "0x9cdA1F1B46381a8fA831de315dB2F8ba8B813FFc",
+  "storageSignerAddress": "0x43e931272144bD746c00AB1c4f05fD536Db4Af78",
+  "originalBalance": "1.0",
+  "storageFunding": "0.1",
+  "storageFundingTransaction": "0xc9f26455ba316e26914b62d0fad5dfe34cfb0b766d58d8210c7824918342309c",
+  "deployerSweepTransaction": "0xd4295337b0159ee281963a257723365106dfbb37b2dc44fe4c06dd16afbc0cda",
+  "finalOldBalance": "0.000001",
+  "finalDeployerBalance": "0.899830999999706",
+  "finalStorageBalance": "0.1"
+}

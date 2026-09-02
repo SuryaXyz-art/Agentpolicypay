@@ -1,0 +1,26 @@
+node_modules/
+.next/
+out/
+artifacts/
+cache/
+typechain-types/
+coverage/
+coverage.json
+.env*.local
+.env.*
+!.env.example
+
+next-dev*.log
+tsconfig.tsbuildinfo
+.env
+
+# Framework and deployment output
+.vercel/
+dist/
+frontend/.next/
+frontend/out/
+
+# Deployment credentials and generated deployment secrets
+deployments/*.secret.json
+deployments/**/.secret*
+deployments/**/secrets/

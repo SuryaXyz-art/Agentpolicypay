@@ -1,0 +1,93 @@
+{
+  "schema": "apolo-mind/wave3/deployment/v1",
+  "network": "aristotle",
+  "chainId": 16661,
+  "rehearsalOnly": false,
+  "status": "DEPLOYED_BYTECODE_MATCHED",
+  "createdAt": "2026-09-01T18:52:41.612Z",
+  "deployer": "0x9cdA1F1B46381a8fA831de315dB2F8ba8B813FFc",
+  "maximumGasCostBaseUnits": "14451590427096732",
+  "sourceVerification": "VERIFIED",
+  "contracts": [
+    {
+      "name": "AgentPolicyRegistry",
+      "address": "0x48d2A5661340ad0B44f36769F512dFC19773e55D",
+      "nonce": 0,
+      "constructorArguments": [],
+      "creationDataHash": "0x44f2f14ab48d5d026e5181dfe894548f815519c203a5a3d24b31ec84ce4b9e60",
+      "expectedRuntimeHash": "0xdc1a05811dc4c823f688041eda075ca5cb6e1ba8ad7daf843f522b73a0c1c3e2",
+      "compiler": "0.8.20+commit.a1b79de6",
+      "settings": {
+        "optimizer": {
+          "enabled": true,
+          "runs": 200
+        },
+        "evmVersion": "paris",
+        "viaIR": true,
+        "outputSelection": {
+          "*": {
+            "*": [
+              "abi",
+              "evm.bytecode",
+              "evm.deployedBytecode",
+              "evm.methodIdentifiers",
+              "metadata"
+            ],
+            "": [
+              "ast"
+            ]
+          }
+        }
+      },
+      "status": "BYTECODE_MATCHED",
+      "transactionHash": "0xa1d645069720235c8e835fbb5f4348c63029708758b0119ec5a4c2ae70a64921",
+      "blockNumber": 43250009,
+      "gasUsed": "404032",
+      "runtimeHash": "0xdc1a05811dc4c823f688041eda075ca5cb6e1ba8ad7daf843f522b73a0c1c3e2",
+      "explorerAddress": "https://chainscan.0g.ai/address/0x48d2A5661340ad0B44f36769F512dFC19773e55D",
+      "explorerTransaction": "https://chainscan.0g.ai/tx/0xa1d645069720235c8e835fbb5f4348c63029708758b0119ec5a4c2ae70a64921",
+      "sourceVerification": "VERIFIED"
+    },
+    {
+      "name": "AgentPaymentGuard",
+      "address": "0x94944FB6D36a70E14AF8B984C543E73d444D19A5",
+      "nonce": 1,
+      "constructorArguments": [
+        "0x48d2A5661340ad0B44f36769F512dFC19773e55D"
+      ],
+      "creationDataHash": "0xcf46472bb2a1a86a264c1634a74c16f500d929bab45914515ae02e6c6e841702",
+      "expectedRuntimeHash": "0xf8858107c54d399a4c697cfc447499f0f507a21b2c5f0c79b10a1c8cc58d1bab",
+      "compiler": "0.8.20+commit.a1b79de6",
+      "settings": {
+        "optimizer": {
+          "enabled": true,
+          "runs": 200
+        },
+        "evmVersion": "paris",
+        "viaIR": true,
+        "outputSelection": {
+          "*": {
+            "*": [
+              "abi",
+              "evm.bytecode",
+              "evm.deployedBytecode",
+              "evm.methodIdentifiers",
+              "metadata"
+            ],
+            "": [
+              "ast"
+            ]
+          }
+        }
+      },
+      "status": "BYTECODE_MATCHED",
+      "transactionHash": "0x6dcd198bf846c452c0e78b8af1b19b4eeab121c155c726b6ab723d381166ff83",
+      "blockNumber": 43250017,
+      "gasUsed": "2061123",
+      "runtimeHash": "0xf8858107c54d399a4c697cfc447499f0f507a21b2c5f0c79b10a1c8cc58d1bab",
+      "explorerAddress": "https://chainscan.0g.ai/address/0x94944FB6D36a70E14AF8B984C543E73d444D19A5",
+      "explorerTransaction": "https://chainscan.0g.ai/tx/0x6dcd198bf846c452c0e78b8af1b19b4eeab121c155c726b6ab723d381166ff83",
+      "sourceVerification": "VERIFIED"
+    }
+  ]
+}

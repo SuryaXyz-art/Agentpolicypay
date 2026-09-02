@@ -1,0 +1,210 @@
+﻿@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: #050505;
+  color: #f8fafc;
+  font-family: var(--font-sans), Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  text-rendering: geometricPrecision;
+}
+
+body::before,
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+}
+
+body::before {
+  z-index: 0;
+  background:
+    radial-gradient(circle at 15% 16%, rgba(229, 9, 20, 0.28), transparent 30%),
+    radial-gradient(circle at 84% 14%, rgba(255, 255, 255, 0.10), transparent 24%),
+    radial-gradient(circle at 50% 88%, rgba(239, 68, 68, 0.22), transparent 34%),
+    linear-gradient(135deg, #020202 0%, #111111 48%, #070707 100%);
+  animation: living-color 14s ease-in-out infinite alternate;
+}
+
+body::after {
+  z-index: 0;
+  opacity: 0.24;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.12) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.12) 1px, transparent 1px);
+  background-size: 54px 54px;
+  mask-image: linear-gradient(to bottom, transparent, black 14%, black 82%, transparent);
+  animation: grid-drift 24s linear infinite;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+@keyframes living-color {
+  0% { filter: saturate(1.05); transform: scale(1); }
+  100% { filter: saturate(1.4); transform: scale(1.035); }
+}
+
+@keyframes grid-drift {
+  from { background-position: 0 0, 0 0; }
+  to { background-position: 108px 54px, 108px 54px; }
+}
+
+@layer components {
+  .app-shell {
+    @apply relative z-[1] min-h-screen overflow-hidden bg-transparent text-white;
+  }
+
+  .page {
+    @apply relative mx-auto max-w-7xl px-5 py-8 sm:px-8 lg:px-10;
+  }
+
+  .band {
+    @apply sticky top-0 z-40 border-b border-white/10 bg-black/75 backdrop-blur-xl;
+  }
+
+  .nav {
+    @apply mx-auto flex max-w-7xl flex-col gap-4 px-5 py-3 sm:px-8 lg:flex-row lg:items-center lg:justify-between lg:px-10;
+  }
+
+  .brand {
+    @apply flex items-center gap-3 text-base font-extrabold tracking-wide text-white;
+  }
+
+  .brand-mark {
+    @apply grid h-10 w-10 place-items-center overflow-hidden rounded-md border border-white/10 bg-white shadow-glow;
+  }
+
+  .nav-links {
+    @apply flex flex-wrap gap-2;
+  }
+
+  .nav-links a {
+    @apply inline-flex items-center gap-2 rounded-md px-3 py-2 text-sm font-semibold text-slate-200 transition hover:bg-white hover:text-black;
+  }
+
+  .section {
+    @apply mt-8 grid gap-6;
+  }
+
+  .stack {
+    @apply grid gap-4;
+  }
+
+  .grid.cols-2 {
+    @apply gap-5 lg:grid-cols-2;
+  }
+
+  .grid.cols-3 {
+    @apply gap-5 md:grid-cols-3;
+  }
+
+  .card {
+    @apply rounded-lg border border-white/10 bg-black/55 p-5 shadow-2xl shadow-black/40 backdrop-blur-xl;
+  }
+
+  .compact {
+    @apply shadow-none;
+  }
+
+  .row {
+    @apply flex flex-wrap items-center gap-3;
+  }
+
+  .actions {
+    @apply flex flex-wrap items-center gap-3;
+  }
+
+  .button {
+    @apply inline-flex min-h-11 items-center justify-center gap-2 rounded-md bg-aqua px-5 font-bold text-white transition hover:bg-white hover:text-black;
+  }
+
+  .button.secondary {
+    @apply border border-white/20 bg-white/10 text-white hover:bg-white hover:text-black;
+  }
+
+  .eyebrow {
+    @apply text-xs font-extrabold uppercase tracking-[0.22em] text-aqua;
+  }
+
+  .lede {
+    @apply max-w-2xl text-lg leading-8 text-slate-200;
+  }
+
+  .muted {
+    @apply text-slate-300;
+  }
+
+  .metric {
+    @apply grid gap-2;
+  }
+
+  .metric span {
+    @apply text-sm text-slate-300;
+  }
+
+  .metric strong {
+    @apply text-3xl font-extrabold text-white;
+  }
+
+  .form {
+    @apply grid gap-4;
+  }
+
+  .field {
+    @apply grid gap-2;
+  }
+
+  .field label {
+    @apply text-sm font-bold text-slate-200;
+  }
+
+  .field input,
+  .field select {
+    @apply min-h-11 rounded-md border border-white/15 bg-black/55 px-3 text-white outline-none transition focus:border-aqua;
+  }
+
+  .list {
+    @apply grid gap-4;
+  }
+
+  .pill {
+    @apply inline-flex w-fit items-center gap-2 rounded-full border border-white/15 bg-white/10 px-3 py-1 text-xs font-bold text-slate-100;
+  }
+
+  .pill.ok {
+    @apply border border-aqua/30 bg-aqua/15 text-aqua;
+  }
+
+  .pill.warn {
+    @apply border border-plasma/30 bg-plasma/15 text-pink-100;
+  }
+
+  .pill.bad {
+    @apply border border-red-300/30 bg-red-400/20 text-red-100;
+  }
+
+  .code {
+    @apply break-all font-mono text-sm;
+  }
+}

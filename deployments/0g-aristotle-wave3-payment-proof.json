@@ -1,0 +1,41 @@
+{
+  "schema": "apolo-mind/wave3/mainnet-payment-proof/v1",
+  "network": "aristotle",
+  "chainId": 16661,
+  "status": "VERIFIED",
+  "completedAt": "2026-09-01T18:58:14.610Z",
+  "registryAddress": "0x48d2A5661340ad0B44f36769F512dFC19773e55D",
+  "paymentGuardAddress": "0x94944FB6D36a70E14AF8B984C543E73d444D19A5",
+  "policyId": "1",
+  "ownerAndAgent": "0x9cdA1F1B46381a8fA831de315dB2F8ba8B813FFc",
+  "receiver": "0x43e931272144bD746c00AB1c4f05fD536Db4Af78",
+  "vaultDeposit": "0.02",
+  "vaultDepositTransaction": "0x6675f7bb7ce6ae3f77a9f7bbe9f61838a60cbcf17007aaa3aa2787971ba46c78",
+  "paymentAmount": "0.001",
+  "intentHash": "0xe4331f420afcba429e898194cd8ad3351f772d8b70af1b8720da4ccc671c093f",
+  "intentCreationTransaction": "0x2085b202b761da920d78dbd8dca85721ee5af5959b734fa6cb4cefea1eea3f55",
+  "paymentExecutionTransaction": "0x76130405d42e024c4431d0b38398f11b3574f789d16eba2f5450ae689c8b4402",
+  "receiverBalanceDelta": "0.001",
+  "preReceipt": {
+    "rootHash": "0x01ab3a98cef0f996585fdc17ad0e3c2748c3d0dec44ba1351cc131ae8eaee0d6",
+    "storageTransaction": "0x37496060610e2b525dd435c4a5a02a49efec7761e9498561cb115c523eaa551f",
+    "proofRetrieved": true,
+    "exactContentMatch": true
+  },
+  "finalReceipt": {
+    "rootHash": "0x63448259a19b4c82925118c90de292beefd485a60a57d4f7394899d2469d7674",
+    "storageTransaction": "0x9d13d36880017196b0e773bbfd1cb4fd64fac06b0cbb201ae71459f14d947318",
+    "rootFinalizationTransaction": "0xdbab5eba0a3ed117bb3b3654363a9e5d3436fcd136e4e6f204a2ffbe1ea62260",
+    "proofRetrieved": true,
+    "exactContentMatch": true
+  },
+  "aboveThresholdNegativeCase": {
+    "amount": "0.006",
+    "intentHash": "0x428bebfa9e73a28f39217fdabf0004625b073661e5701d05de1bc986437fae34",
+    "creationTransaction": "0xe61dc558d76b2afcb32f4bc0ce6f28a7fa3805c19d5b63d50324c171b3d854be",
+    "executionWithoutApprovalRejected": true,
+    "cancellationTransaction": "0xebd86fe47a728390541773b6869b86067ea0f7c7135264e719f09eebd74c4618"
+  },
+  "availableVaultBalance": "0.019",
+  "reservedVaultBalance": "0.0"
+}
